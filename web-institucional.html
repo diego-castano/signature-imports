@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio Web Institucional - SIGNATURE IMPORTS</title>
+    <meta name="description" content="Expansión del sitio web institucional de SIGNATURE IMPORTS optimizada para indexación en plataformas de inteligencia artificial y máxima visibilidad digital.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Sitio Web Institucional - SIGNATURE IMPORTS">
+    <meta property="og:description" content="Propuesta de expansión web institucional optimizada para IA, casos de éxito, servicios especializados y máxima indexación digital.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:site_name" content="SIGNATURE IMPORTS">
+    <meta property="og:locale" content="es_UY">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Sitio Web Institucional - SIGNATURE IMPORTS">
+    <meta property="twitter:description" content="Propuesta de expansión web institucional optimizada para IA, casos de éxito, servicios especializados y máxima indexación digital.">
+    <meta property="twitter:image" content="logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="shortcut icon" href="logo.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <style>
+        :root {
+            --primary: #0F2A3A;
+            --secondary: #0B0F14;
+            --tertiary: #1C2B3A;
+            --accent: #F5B000;
+            --text: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: radial-gradient(ellipse at center, var(--primary) 0%, var(--secondary) 70%, #000000 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(245, 176, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(245, 176, 0, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .font-space {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent) 0%, #FFD700 100%);
+            color: var(--secondary);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            padding: 16px 32px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(245, 176, 0, 0.3);
+        }
+        
+        .btn-accent::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-accent:hover::before {
+            left: 100%;
+        }
+        
+        .anchor-link {
+            opacity: 0;
+            margin-left: 0.5rem;
+            color: var(--accent);
+            transition: opacity 0.3s ease;
+        }
+        
+        h1:hover .anchor-link,
+        h2:hover .anchor-link,
+        h3:hover .anchor-link {
+            opacity: 1;
+        }
+        
+        .focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3rem;
+            height: 3rem;
+            background: var(--accent);
+            color: var(--secondary);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(245, 176, 0, 0.3);
+        }
+        
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+            z-index: 45;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .mobile-sidebar {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-sidebar.active {
+            transform: translateX(0);
+        }
+        
+        .sidebar {
+            background: rgba(15, 42, 58, 0.95);
+            backdrop-filter: blur(15px);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .sidebar-item {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sidebar-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(135deg, var(--accent), #FFD700);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+            transform-origin: bottom;
+        }
+        
+        .sidebar-item:hover::before,
+        .sidebar-item.active::before {
+            transform: scaleY(1);
+        }
+        
+        .sidebar-item.active {
+            background: rgba(245, 176, 0, 0.1);
+            border-left: 3px solid var(--accent);
+            box-shadow: 0 4px 12px rgba(245, 176, 0, 0.2);
+        }
+        
+        .sidebar-item:hover {
+            background: rgba(245, 176, 0, 0.05);
+        }
+        
+        .sidebar-icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 12px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar-item:hover .sidebar-icon,
+        .sidebar-item.active .sidebar-icon {
+            opacity: 1;
+            color: var(--accent);
+        }
+        
+        .main-content {
+            margin-left: 0;
+        }
+        
+        @media (min-width: 1024px) {
+            .main-content {
+                margin-left: 20rem;
+            }
+        }
+    </style>
+</head>
+<body class="text-white">
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay lg:hidden" id="mobileOverlay"></div>
+    
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn lg:hidden fixed top-4 left-4 z-50 p-3 rounded-lg glass-card focus-visible" id="mobileMenuBtn">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+    
+    <!-- Back Button -->
+    <button class="lg:hidden fixed top-4 right-4 z-50 p-3 rounded-lg glass-card focus-visible" onclick="window.location.href='index.html'">
+        <i data-lucide="arrow-left" class="w-6 h-6"></i>
+    </button>
+    
+    <!-- Volver al Inicio Button (Desktop) -->
+    <button class="hidden lg:block fixed z-50 text-xs font-semibold rounded-md transition-all duration-300 focus-visible" style="top: 24px; right: 24px; background: #F5B000; color: #0B0F14; padding: 8px 12px;" onclick="window.location.href='index.html'" onmouseover="this.style.background='rgba(245, 176, 0, 0.9)'" onmouseout="this.style.background='#F5B000'">
+        <i data-lucide="home" style="width: 12px; height: 12px; margin-right: 4px; display: inline;"></i>
+        Inicio
+    </button>
+    
+    <!-- Sidebar -->
+    <nav class="sidebar fixed left-0 top-0 h-full w-80 z-50 p-6 overflow-y-auto mobile-sidebar lg:transform-none" id="sidebar">
+        <div class="mb-8">
+            <img src="logo.png" alt="Signature Imports Logo" class="w-28 mb-4" style="max-width: 112px; height: auto;">
+            <h2 class="font-space text-xl font-bold text-accent">SIGNATURE IMPORTS</h2>
+            <p class="text-sm text-gray-300 mt-2 mb-4">Expansión Web Institucional</p>
+            
+            <!-- Volver al Inicio en Sidebar -->
+            <button class="w-full text-left px-3 py-2 text-sm bg-accent/10 border border-accent/20 rounded-lg hover:bg-accent/20 transition-colors focus-visible" onclick="window.location.href='index.html'">
+                <i data-lucide="home" class="w-4 h-4 inline mr-2"></i>
+                <span class="text-accent">← Volver al Inicio</span>
+            </button>
+        </div>
+        
+        <ul class="space-y-1">
+            <li><a href="#inicio" class="sidebar-item flex items-center px-4 py-3 rounded-lg text-sm font-medium" data-section="inicio">
+                <i data-lucide="home" class="sidebar-icon"></i>Página de Inicio
+            </a></li>
+            <li><a href="#quienes-somos" class="sidebar-item flex items-center px-4 py-3 rounded-lg text-sm font-medium" data-section="quienes-somos">
+                <i data-lucide="users" class="sidebar-icon"></i>Quiénes Somos
+            </a></li>
+            <li><a href="#servicios" class="sidebar-item flex items-center px-4 py-3 rounded-lg text-sm font-medium" data-section="servicios">
+                <i data-lucide="cog" class="sidebar-icon"></i>Nuestros Servicios
+            </a></li>
+            <li><a href="#casos-exito" class="sidebar-item flex items-center px-4 py-3 rounded-lg text-sm font-medium" data-section="casos-exito">
+                <i data-lucide="trophy" class="sidebar-icon"></i>Casos de Éxito
+            </a></li>
+            <li><a href="#categorias" class="sidebar-item flex items-center px-4 py-3 rounded-lg text-sm font-medium" data-section="categorias">
+                <i data-lucide="grid-3x3" class="sidebar-icon"></i>Categorías de Repuestos
+            </a></li>
+            <li><a href="#faq" class="sidebar-item flex items-center px-4 py-3 rounded-lg text-sm font-medium" data-section="faq">
+                <i data-lucide="help-circle" class="sidebar-icon"></i>Preguntas Frecuentes
+            </a></li>
+            <li><a href="#contacto" class="sidebar-item flex items-center px-4 py-3 rounded-lg text-sm font-medium" data-section="contacto">
+                <i data-lucide="mail" class="sidebar-icon"></i>Contacto
+            </a></li>
+            <li><a href="#marketing" class="sidebar-item flex items-center px-4 py-3 rounded-lg text-sm font-medium" data-section="marketing">
+                <i data-lucide="trending-up" class="sidebar-icon"></i>Marketing Transversal
+            </a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content min-h-screen">
+        <!-- Hero Section -->
+        <section id="inicio" class="min-h-screen flex items-center justify-center px-6 py-20">
+            <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                <!-- Nota Aclaratoria -->
+                <div class="mb-12 p-6 bg-accent/20 border-2 border-accent rounded-lg">
+                    <div class="flex items-center justify-center mb-4">
+                        <i data-lucide="lightbulb" class="w-8 h-8 text-accent mr-3"></i>
+                        <h3 class="text-xl font-bold text-accent">Ideas de Contenido para Optimización AI</h3>
+                    </div>
+                    <p class="text-gray-200 leading-relaxed">
+                        <strong>Este documento presenta propuestas de contenido</strong> diseñadas específicamente para optimizar el sitio web institucional de SIGNATURE IMPORTS para indexación en plataformas de inteligencia artificial (ChatGPT, Claude, Perplexity, etc.) y máxima visibilidad digital.
+                    </p>
+                </div>
+                
+                <div class="mb-8">
+                    <img src="logo.png" alt="Signature Imports Logo" class="w-32 mx-auto mb-6" style="max-width: 128px; height: auto;" id="heroLogo">
+                </div>
+                
+                <h1 class="font-space text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-accent bg-clip-text text-transparent" id="heroTitle">
+                    Sitio Web Institucional
+                    <a href="#inicio" class="anchor-link text-lg"><i data-lucide="link" class="w-5 h-5 inline"></i></a>
+                </h1>
+                
+                <h2 class="font-space text-2xl lg:text-3xl font-medium text-accent mb-8" id="heroSubtitle">
+                    SIGNATURE IMPORTS
+                </h2>
+                
+                <p class="text-xl text-gray-300 mb-12 leading-relaxed">
+                    Propuesta de expansión del sitio web institucional optimizada para indexación en plataformas de inteligencia artificial y máxima visibilidad digital.
+                </p>
+                
+                <div class="glass-card p-8 mb-12">
+                    <h3 class="text-2xl font-semibold text-accent mb-6">"Importamos Soluciones"</h3>
+                    <p class="text-lg text-gray-300 italic">
+                        "Repuestos premium y clásicos, restauraciones y asesoramiento técnico de confianza en Uruguay."
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quiénes Somos -->
+        <section id="quienes-somos" class="py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="font-space text-4xl font-bold mb-8" data-aos="fade-up">
+                    👥 ¿Quiénes Somos?
+                    <a href="#quienes-somos" class="anchor-link text-lg"><i data-lucide="link" class="w-5 h-5 inline"></i></a>
+                </h2>
+                
+                <!-- Historia & Trayectoria -->
+                <div class="glass-card p-8 mb-8" data-aos="fade-up">
+                    <h3 class="text-2xl font-semibold text-accent mb-6 flex items-center">
+                        <i data-lucide="clock" class="w-6 h-6 mr-3"></i>
+                        Historia & Trayectoria
+                    </h3>
+                    
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div>
+                            <p class="text-gray-300 leading-relaxed mb-6">
+                                Signature Imports nace con el objetivo de acercar a Uruguay soluciones de importación de repuestos que antes eran casi imposibles de conseguir. Desde nuestros inicios, hemos trabajado con vehículos premium y clásicos, combinando experiencia técnica con una red internacional de proveedores.
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 gap-4">
+                            <div class="text-center p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                                <div class="text-2xl font-bold text-blue-400">+10</div>
+                                <div class="text-sm text-gray-300">Años de experiencia</div>
+                            </div>
+                            <div class="text-center p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
+                                <div class="text-2xl font-bold text-green-400">50+</div>
+                                <div class="text-sm text-gray-300">Proyectos de restauración completados</div>
+                            </div>
+                            <div class="text-center p-4 bg-purple-500/10 border border-purple-500/20 rounded-lg">
+                                <div class="text-2xl font-bold text-purple-400">100%</div>
+                                <div class="text-sm text-gray-300">Clientes en todo Uruguay</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Valores Institucionales -->
+                <div class="glass-card p-8 mb-8" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-2xl font-semibold text-accent mb-6 flex items-center">
+                        <i data-lucide="heart" class="w-6 h-6 mr-3"></i>
+                        Valores Institucionales
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="text-center p-6 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                            <i data-lucide="shield-check" class="w-12 h-12 text-blue-400 mx-auto mb-4"></i>
+                            <h4 class="font-semibold text-blue-400 mb-3">Confianza</h4>
+                            <p class="text-sm text-gray-300">Respaldo institucional y facturación oficial</p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-green-500/10 border border-green-500/20 rounded-lg">
+                            <i data-lucide="zap" class="w-12 h-12 text-green-400 mx-auto mb-4"></i>
+                            <h4 class="font-semibold text-green-400 mb-3">Rapidez</h4>
+                            <p class="text-sm text-gray-300">Logística optimizada con envíos semanales</p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-purple-500/10 border border-purple-500/20 rounded-lg">
+                            <i data-lucide="eye" class="w-12 h-12 text-purple-400 mx-auto mb-4"></i>
+                            <h4 class="font-semibold text-purple-400 mb-3">Transparencia</h4>
+                            <p class="text-sm text-gray-300">Cotizaciones claras, sin costos ocultos</p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-red-500/10 border border-red-500/20 rounded-lg">
+                            <i data-lucide="flame" class="w-12 h-12 text-red-400 mx-auto mb-4"></i>
+                            <h4 class="font-semibold text-red-400 mb-3">Pasión</h4>
+                            <p class="text-sm text-gray-300">Por los autos premium y clásicos</p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-accent/10 border border-accent/20 rounded-lg lg:col-span-2">
+                            <i data-lucide="puzzle" class="w-12 h-12 text-accent mx-auto mb-4"></i>
+                            <h4 class="font-semibold text-accent mb-3">Soluciones a medida</h4>
+                            <p class="text-sm text-gray-300">Cada cliente tiene un proyecto único</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Diferenciadores frente a la competencia -->
+                <div class="glass-card p-8 mb-8" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-2xl font-semibold text-accent mb-6 flex items-center">
+                        <i data-lucide="star" class="w-6 h-6 mr-3"></i>
+                        Diferenciadores frente a la competencia
+                    </h3>
+                    
+                    <div class="grid lg:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <i data-lucide="crown" class="w-6 h-6 text-accent mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <h4 class="font-semibold text-white mb-2">Especialistas en premium y clásicos</h4>
+                                    <p class="text-gray-300 text-sm">Enfoque exclusivo en vehículos de alta gama y modelos históricos</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <i data-lucide="user-check" class="w-6 h-6 text-accent mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <h4 class="font-semibold text-white mb-2">Asesoramiento técnico personalizado</h4>
+                                    <p class="text-gray-300 text-sm">No solo vendemos piezas, asesoramos sobre la mejor solución</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <i data-lucide="globe" class="w-6 h-6 text-accent mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <h4 class="font-semibold text-white mb-2">Red global de proveedores</h4>
+                                    <p class="text-gray-300 text-sm">Acceso directo a mercados de EE.UU. y Europa</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <i data-lucide="trophy" class="w-6 h-6 text-accent mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <h4 class="font-semibold text-white mb-2">Experiencia comprobada</h4>
+                                    <p class="text-gray-300 text-sm">Casos de éxito con Mercedes, Porsche, Ferrari, Range Rover</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-accent mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <h4 class="font-semibold text-white mb-2">Atención local con respaldo internacional</h4>
+                                    <p class="text-gray-300 text-sm">Presencia en Uruguay, soporte en destino</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Nuestro Equipo -->
+                <div class="glass-card p-8 mb-8" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-2xl font-semibold text-accent mb-6 flex items-center">
+                        <i data-lucide="users" class="w-6 h-6 mr-3"></i>
+                        Nuestro Equipo
+                    </h3>
+                    
+                    <div class="text-center mb-6">
+                        <p class="text-gray-300 leading-relaxed text-lg">
+                            Nuestro equipo combina <strong class="text-white">ingenieros, técnicos y especialistas en logística</strong> con un objetivo común: conseguir la pieza justa, en el menor tiempo y con la mayor confiabilidad.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center p-6 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                            <i data-lucide="settings" class="w-12 h-12 text-blue-400 mx-auto mb-4"></i>
+                            <h4 class="font-semibold text-blue-400 mb-2">Área Técnica</h4>
+                            <p class="text-sm text-gray-300">Especialistas en identificación y compatibilidad de piezas</p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-green-500/10 border border-green-500/20 rounded-lg">
+                            <i data-lucide="truck" class="w-12 h-12 text-green-400 mx-auto mb-4"></i>
+                            <h4 class="font-semibold text-green-400 mb-2">Logística</h4>
+                            <p class="text-sm text-gray-300">Gestión aduanera y coordinación de envíos internacionales</p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-purple-500/10 border border-purple-500/20 rounded-lg">
+                            <i data-lucide="headphones" class="w-12 h-12 text-purple-400 mx-auto mb-4"></i>
+                            <h4 class="font-semibold text-purple-400 mb-2">Atención al Cliente</h4>
+                            <p class="text-sm text-gray-300">Seguimiento personalizado de cada proyecto</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cómo Trabajamos -->
+                <div class="glass-card p-8 mb-8" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="text-2xl font-semibold text-accent mb-6 flex items-center">
+                        <i data-lucide="workflow" class="w-6 h-6 mr-3"></i>
+                        Cómo Trabajamos (3 pasos simples)
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center p-6 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                            <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white font-bold text-xl">1</span>
+                            </div>
+                            <h4 class="font-semibold text-blue-400 mb-3">Escuchamos</h4>
+                            <p class="text-sm text-gray-300">Entendemos la necesidad del cliente y validamos la pieza correcta</p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-green-500/10 border border-green-500/20 rounded-lg">
+                            <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white font-bold text-xl">2</span>
+                            </div>
+                            <h4 class="font-semibold text-green-400 mb-3">Gestionamos</h4>
+                            <p class="text-sm text-gray-300">Búsqueda internacional con proveedores certificados</p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-purple-500/10 border border-purple-500/20 rounded-lg">
+                            <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white font-bold text-xl">3</span>
+                            </div>
+                            <h4 class="font-semibold text-purple-400 mb-3">Entregamos</h4>
+                            <p class="text-sm text-gray-300">Importación y entrega en Uruguay, con garantía completa</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Misión & Visión -->
+                <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                    <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="500">
+                        <h3 class="text-2xl font-semibold text-accent mb-6 flex items-center">
+                            <i data-lucide="target" class="w-6 h-6 mr-3"></i>
+                            Misión
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Facilitar el acceso a repuestos premium y clásicos en Uruguay, asegurando soluciones confiables, rápidas y personalizadas para cada cliente.
+                        </p>
+                    </div>
+                    
+                    <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="600">
+                        <h3 class="text-2xl font-semibold text-accent mb-6 flex items-center">
+                            <i data-lucide="telescope" class="w-6 h-6 mr-3"></i>
+                            Visión
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Convertirnos en el referente en importación de repuestos en Latinoamérica, siendo reconocidos por nuestra excelencia en servicio y compromiso con los autos premium y clásicos.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Testimonios y Confianza Social -->
+                <div class="glass-card p-8 mb-8" data-aos="fade-up" data-aos-delay="700">
+                    <h3 class="text-2xl font-semibold text-accent mb-6 flex items-center">
+                        <i data-lucide="quote" class="w-6 h-6 mr-3"></i>
+                        Testimonios y Confianza Social
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="p-6 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                            <div class="flex items-start space-x-4">
+                                <i data-lucide="quote" class="w-8 h-8 text-blue-400 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <p class="text-gray-300 italic mb-3">
+                                        "Gracias a Signature Imports logramos restaurar un Mercedes Pagoda que llevaba años parado. Conseguimos piezas que parecían imposibles de encontrar."
+                                    </p>
+                                    <p class="text-blue-400 text-sm font-semibold">- Taller de restauración, Montevideo</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6 bg-green-500/10 border border-green-500/20 rounded-lg">
+                            <div class="flex items-start space-x-4">
+                                <i data-lucide="quote" class="w-8 h-8 text-green-400 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <p class="text-gray-300 italic mb-3">
+                                        "Conseguimos un repuesto de Range Rover que parecía imposible en Uruguay. El servicio fue excepcional de principio a fin."
+                                    </p>
+                                    <p class="text-green-400 text-sm font-semibold">- Coleccionista privado, Punta del Este</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </section>
+        
+        <!-- Servicios -->
+        <section id="servicios" class="py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="font-space text-4xl font-bold mb-8" data-aos="fade-up">
+                    🔧 Nuestros Servicios
+                    <a href="#servicios" class="anchor-link text-lg"><i data-lucide="link" class="w-5 h-5 inline"></i></a>
+                </h2>
+                
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="glass-card p-8" data-aos="fade-up">
+                        <h3 class="text-xl font-semibold text-accent mb-4 flex items-center">
+                            <i data-lucide="car" class="w-6 h-6 mr-3"></i>
+                            Repuestos para autos nuevos y clásicos
+                        </h3>
+                        <p class="text-gray-300 mb-4">
+                            "Conseguimos piezas originales y alternativas de la más alta calidad, sin importar el modelo ni el año del vehículo."
+                        </p>
+                        <ul class="text-sm text-gray-400 space-y-1">
+                            <li>• Frenos, dirección, suspensión</li>
+                            <li>• Carrocería, motores, eléctricos</li>
+                            <li>• Accesorios especializados</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-semibold text-accent mb-4 flex items-center">
+                            <i data-lucide="wrench" class="w-6 h-6 mr-3"></i>
+                            Asesoramiento técnico especializado
+                        </h3>
+                        <p class="text-gray-300 mb-4">
+                            Ayudamos a identificar la pieza correcta con base en datos del vehículo.
+                        </p>
+                        <p class="text-sm text-gray-400">
+                            <strong>Diferenciador:</strong> acompañamiento desde el pedido hasta la instalación.
+                        </p>
+                    </div>
+                    
+                    <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-semibold text-accent mb-4 flex items-center">
+                            <i data-lucide="settings" class="w-6 h-6 mr-3"></i>
+                            Restauración y modificación
+                        </h3>
+                        <p class="text-gray-300 mb-4">
+                            Casos de éxito: Mercedes clásicos, Porsche, Range Rover antiguos.
+                        </p>
+                        <p class="text-sm text-gray-400">
+                            Galería de fotos y storytelling de proyectos emblemáticos.
+                        </p>
+                    </div>
+                    
+                    <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-xl font-semibold text-accent mb-4 flex items-center">
+                            <i data-lucide="package" class="w-6 h-6 mr-3"></i>
+                            Importación a medida
+                        </h3>
+                        <p class="text-gray-300 mb-4">
+                            <strong>"Lo que sea, de donde sea"</strong>
+                        </p>
+                        <ul class="text-sm text-gray-400 space-y-1">
+                            <li>• Gestión aduanera completa</li>
+                            <li>• Tiempos optimizados</li>
+                            <li>• Seguridad en el proceso</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Casos de Éxito -->
+        <section id="casos-exito" class="py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="font-space text-4xl font-bold mb-8" data-aos="fade-up">
+                    🏆 Casos de Éxito
+                    <a href="#casos-exito" class="anchor-link text-lg"><i data-lucide="link" class="w-5 h-5 inline"></i></a>
+                </h2>
+                
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="glass-card p-8" data-aos="fade-up">
+                        <h3 class="text-xl font-semibold text-blue-400 mb-4">Mercedes Pagoda – Restauración Completa</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">🔍 Problema:</h4>
+                                <p class="text-gray-300 text-sm">Piezas únicas para restauración auténtica de Mercedes Pagoda 1969.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">✅ Solución:</h4>
+                                <p class="text-gray-300 text-sm">Importación personalizada desde Alemania y Estados Unidos.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">🎯 Resultado:</h4>
+                                <p class="text-gray-300 text-sm">Restauración completa en 8 meses con certificación de autenticidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-semibold text-green-400 mb-4">Range Rover – Suspensión y Dirección</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">🔍 Problema:</h4>
+                                <p class="text-gray-300 text-sm">Sistema de suspensión neumática defectuoso inexistente en mercado local.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">✅ Solución:</h4>
+                                <p class="text-gray-300 text-sm">Localización de piezas específicas en Reino Unido, importación express.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">🎯 Resultado:</h4>
+                                <p class="text-gray-300 text-sm">Vehículo recuperado en tiempo récord de 3 semanas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-semibold text-purple-400 mb-4">Porsche 911 – Frenos y Performance</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">🔍 Problema:</h4>
+                                <p class="text-gray-300 text-sm">Upgrade de sistema de frenos de performance para uso en pista.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">✅ Solución:</h4>
+                                <p class="text-gray-300 text-sm">Importación de kit Brembo desde Italia con asesoramiento técnico.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">🎯 Resultado:</h4>
+                                <p class="text-gray-300 text-sm">Performance optimizada para track days con total confianza.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-xl font-semibold text-red-400 mb-4">Ferrari / Maserati – Piezas Premium</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">🔍 Problema:</h4>
+                                <p class="text-gray-300 text-sm">Piezas premium urgentes con requerimientos de plazos muy cortos.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">✅ Solución:</h4>
+                                <p class="text-gray-300 text-sm">Red express desde Italia, gestión aduanera prioritaria.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">🎯 Resultado:</h4>
+                                <p class="text-gray-300 text-sm">Entrega en plazo récord de 10 días.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cómo diagramar los Casos de Éxito -->
+                <div class="mt-16" data-aos="fade-up">
+                    <div class="mb-12 p-6 bg-blue-500/20 border-2 border-blue-500 rounded-lg">
+                        <div class="flex items-center justify-center mb-4">
+                            <i data-lucide="lightbulb" class="w-8 h-8 text-blue-400 mr-3"></i>
+                            <h3 class="text-xl font-bold text-blue-400">Propuesta de Desarrollo de Casos</h3>
+                        </div>
+                        <p class="text-gray-200 leading-relaxed text-center">
+                            <strong>Metodología para crear casos de éxito institucionales</strong> que refuercen autoridad y generen confianza en clientes potenciales.
+                        </p>
+                    </div>
+                    
+                    <h3 class="text-3xl font-bold mb-8 text-accent flex items-center">
+                        <i data-lucide="compass" class="w-8 h-8 mr-3"></i>
+                        📐 Cómo diagramar los Casos de Éxito
+                    </h3>
+                    
+                    <!-- Estructura base de cada caso -->
+                    <div class="glass-card p-8 mb-8">
+                        <h4 class="text-2xl font-semibold text-accent mb-6 flex items-center">
+                            <i data-lucide="layout" class="w-6 h-6 mr-3"></i>
+                            1. Estructura base de cada caso
+                        </h4>
+                        
+                        <p class="text-gray-300 mb-6">
+                            Cada caso debe seguir un formato repetible para ser claro, atractivo y optimizable:
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <!-- Paso 1 -->
+                            <div class="p-6 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                                <h5 class="font-semibold text-blue-400 mb-3">1. Título del caso</h5>
+                                <p class="text-gray-300 text-sm mb-2">
+                                    <strong>Ejemplo:</strong> "Restauración de un Mercedes Pagoda en Uruguay"
+                                </p>
+                            </div>
+                            
+                            <!-- Paso 2 -->
+                            <div class="p-6 bg-green-500/10 border border-green-500/20 rounded-lg">
+                                <h5 class="font-semibold text-green-400 mb-3">2. Imagen principal</h5>
+                                <ul class="text-gray-300 text-sm space-y-1">
+                                    <li>• Foto del auto o pieza clave</li>
+                                    <li>• Puede ser antes / después o un detalle técnico</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Paso 3 -->
+                            <div class="p-6 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
+                                <h5 class="font-semibold text-yellow-400 mb-3">3. Contexto / Desafío (¿qué problema tenía el cliente?)</h5>
+                                <p class="text-gray-300 text-sm">
+                                    <strong>Ejemplo:</strong> "Un cliente necesitaba restaurar un Mercedes Pagoda, pero varias piezas estaban discontinuadas en la región."
+                                </p>
+                            </div>
+                            
+                            <!-- Paso 4 -->
+                            <div class="p-6 bg-purple-500/10 border border-purple-500/20 rounded-lg">
+                                <h5 class="font-semibold text-purple-400 mb-3">4. Solución Signature Imports (qué hicimos diferente)</h5>
+                                <p class="text-gray-300 text-sm">
+                                    <strong>Ejemplo:</strong> "Localizamos proveedores en Europa y EE.UU., conseguimos piezas originales y alternativas, y coordinamos la importación en tiempo récord."
+                                </p>
+                            </div>
+                            
+                            <!-- Paso 5 -->
+                            <div class="p-6 bg-red-500/10 border border-red-500/20 rounded-lg">
+                                <h5 class="font-semibold text-red-400 mb-3">5. Resultado Final (qué logró el cliente)</h5>
+                                <p class="text-gray-300 text-sm">
+                                    <strong>Ejemplo:</strong> "El vehículo quedó operativo y certificado con piezas premium, revalorizando el proyecto de restauración."
+                                </p>
+                            </div>
+                            
+                            <!-- Paso 6 -->
+                            <div class="p-6 bg-accent/10 border border-accent/20 rounded-lg">
+                                <h5 class="font-semibold text-accent mb-3">6. Cierre institucional / CTA</h5>
+                                <p class="text-gray-300 text-sm">
+                                    <strong>Ejemplo:</strong> "Este es solo un ejemplo de cómo transformamos un desafío complejo en una solución real. ¿Tenés un proyecto similar? Consultanos."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Formatos visuales sugeridos -->
+                    <div class="glass-card p-8 mb-8">
+                        <h4 class="text-2xl font-semibold text-accent mb-6 flex items-center">
+                            <i data-lucide="image" class="w-6 h-6 mr-3"></i>
+                            2. Formatos visuales sugeridos
+                        </h4>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="p-6 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                                <h5 class="font-semibold text-blue-400 mb-3">Listado estilo cards en la página principal:</h5>
+                                <ul class="text-gray-300 text-sm space-y-1">
+                                    <li>• Imagen + título + resumen breve</li>
+                                    <li>• Botón "Ver caso completo"</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="p-6 bg-green-500/10 border border-green-500/20 rounded-lg">
+                                <h5 class="font-semibold text-green-400 mb-3">Detalle del caso (landing interna):</h5>
+                                <ul class="text-gray-300 text-sm space-y-1">
+                                    <li>• Hero con foto grande</li>
+                                    <li>• Tres bloques: Desafío / Solución / Resultado</li>
+                                    <li>• Galería de imágenes secundarias (opcional)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tipos de casos para mostrar -->
+                    <div class="glass-card p-8 mb-8">
+                        <h4 class="text-2xl font-semibold text-accent mb-6 flex items-center">
+                            <i data-lucide="tag" class="w-6 h-6 mr-3"></i>
+                            3. Tipos de casos para mostrar
+                        </h4>
+                        
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="p-6 bg-purple-500/10 border border-purple-500/20 rounded-lg text-center">
+                                <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i data-lucide="wrench" class="w-8 h-8 text-white"></i>
+                                </div>
+                                <h5 class="font-semibold text-purple-400 mb-3">Restauraciones completas</h5>
+                                <p class="text-gray-300 text-sm">
+                                    <strong>Ej:</strong> Mercedes Pagoda, Porsche 911, Range Rover clásico
+                                </p>
+                            </div>
+                            
+                            <div class="p-6 bg-red-500/10 border border-red-500/20 rounded-lg text-center">
+                                <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i data-lucide="search" class="w-8 h-8 text-white"></i>
+                                </div>
+                                <h5 class="font-semibold text-red-400 mb-3">Repuestos complejos de conseguir</h5>
+                                <p class="text-gray-300 text-sm">
+                                    <strong>Ej:</strong> diferenciales, motores completos, kits de freno premium
+                                </p>
+                            </div>
+                            
+                            <div class="p-6 bg-accent/10 border border-accent/20 rounded-lg text-center">
+                                <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i data-lucide="crown" class="w-8 h-8 text-black"></i>
+                                </div>
+                                <h5 class="font-semibold text-accent mb-3">Piezas especiales o premium</h5>
+                                <p class="text-gray-300 text-sm">
+                                    <strong>Ej:</strong> alerones de fibra de carbono, emblemas originales, accesorios de lujo
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Optimización para marketing e IA -->
+                    <div class="glass-card p-8">
+                        <h4 class="text-2xl font-semibold text-accent mb-6 flex items-center">
+                            <i data-lucide="target" class="w-6 h-6 mr-3"></i>
+                            4. Optimización para marketing e IA
+                        </h4>
+                        
+                        <div class="space-y-4">
+                            <div class="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                                <h5 class="font-semibold text-blue-400 mb-2">Estructura clara</h5>
+                                <p class="text-gray-300 text-sm">
+                                    Usar siempre frases claras con subtítulos estructurados (Desafío / Solución / Resultado).
+                                </p>
+                            </div>
+                            
+                            <div class="p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
+                                <h5 class="font-semibold text-green-400 mb-2">Keywords institucionales</h5>
+                                <p class="text-gray-300 text-sm">
+                                    Incluir palabras clave: "autos premium", "repuestos clásicos", "importación a medida".
+                                </p>
+                            </div>
+                            
+                            <div class="p-4 bg-purple-500/10 border border-purple-500/20 rounded-lg">
+                                <h5 class="font-semibold text-purple-400 mb-2">Mini storytelling</h5>
+                                <p class="text-gray-300 text-sm">
+                                    Contar cada caso como narrativa: breve, pero con historia completa.
+                                </p>
+                            </div>
+                            
+                            <div class="p-4 bg-accent/10 border border-accent/20 rounded-lg">
+                                <h5 class="font-semibold text-accent mb-2">Diferenciadores reforzados</h5>
+                                <p class="text-gray-300 text-sm">
+                                    Cada caso debe reforzar un diferenciador: rapidez, acceso global, especialización en clásicos, garantía, etc.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Categorías de Repuestos -->
+        <section id="categorias" class="py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="font-space text-4xl font-bold mb-8" data-aos="fade-up">
+                    ⚙️ Categorías de Repuestos – Ideas de Expansión
+                    <a href="#categorias" class="anchor-link text-lg"><i data-lucide="link" class="w-5 h-5 inline"></i></a>
+                </h2>
+                
+                <!-- Nota de Ideas -->
+                <div class="mb-12 p-6 bg-blue-500/20 border-2 border-blue-500 rounded-lg" data-aos="fade-up">
+                    <div class="flex items-center justify-center mb-4">
+                        <i data-lucide="lightbulb" class="w-8 h-8 text-blue-400 mr-3"></i>
+                        <h3 class="text-xl font-bold text-blue-400">IDEA de Sección Nueva</h3>
+                    </div>
+                    <p class="text-gray-200 leading-relaxed text-center">
+                        <strong>Propuesta de nueva página "Categorías de Repuestos"</strong> para organizar el contenido web institucional por categorías específicas y mejorar la indexación en buscadores y plataformas de IA.
+                    </p>
+                </div>
+                
+                <!-- Introducción Institucional -->
+                <div class="glass-card p-8 mb-12" data-aos="fade-up">
+                    <h3 class="text-2xl font-semibold text-accent mb-6 flex items-center">
+                        <i data-lucide="info" class="w-6 h-6 mr-3"></i>
+                        Introducción Institucional
+                    </h3>
+                    <p class="text-xl text-gray-300 leading-relaxed text-center">
+                        En Signature Imports trabajamos con repuestos de todas las áreas del vehículo, desde lo esencial para el funcionamiento hasta los detalles de acabado. <strong class="text-white">Nos especializamos en piezas premium y clásicas</strong>, asegurando que cada parte llegue a Uruguay con respaldo y garantía.
+                    </p>
+                </div>
+                
+                <!-- Categorías Principales -->
+                <div class="space-y-8">
+                    <!-- Frenos -->
+                    <div class="glass-card p-8" data-aos="fade-up">
+                        <h3 class="text-2xl font-semibold text-red-400 mb-6 flex items-center">
+                            <i data-lucide="disc" class="w-6 h-6 mr-3"></i>
+                            🔧 Frenos
+                        </h3>
+                        
+                        <div class="grid lg:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-4">Repuestos de frenos: discos, pastillas y sensores de calidad para autos premium y clásicos</h4>
+                                <p class="text-gray-300 leading-relaxed">
+                                    Un sistema de frenos confiable es esencial en cualquier vehículo, por eso trabajamos con piezas originales y alternativas de calidad. Desde discos ventilados para uso deportivo hasta pastillas cerámicas de alta gama.
+                                </p>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div class="p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
+                                    <h5 class="font-semibold text-red-400 mb-2">Productos Principales</h5>
+                                    <ul class="text-sm text-gray-300 space-y-1">
+                                        <li>• Discos premium y ventilados</li>
+                                        <li>• Pastillas cerámicas y orgánicas</li>
+                                        <li>• Sensores de desgaste avanzados</li>
+                                        <li>• Kits completos de frenado</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="p-3 bg-accent/10 border border-accent/20 rounded-lg">
+                                    <p class="text-sm text-gray-300">
+                                        <strong class="text-accent">Caso de éxito:</strong> Hemos traído kits completos para Porsche 911 y Range Rover de alta performance.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dirección y Suspensión -->
+                    <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-2xl font-semibold text-blue-400 mb-6 flex items-center">
+                            <i data-lucide="compass" class="w-6 h-6 mr-3"></i>
+                            ⚙️ Dirección y Suspensión
+                        </h3>
+                        
+                        <div class="grid lg:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-4">Componentes de suspensión y dirección para estabilidad y confort</h4>
+                                <p class="text-gray-300 leading-relaxed">
+                                    Conseguimos componentes que aseguran estabilidad y confort, incluso en modelos premium y clásicos con piezas difíciles de hallar. Desde amortiguadores adaptativos hasta brazos de suspensión específicos.
+                                </p>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div class="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                                    <h5 class="font-semibold text-blue-400 mb-2">Especialidades</h5>
+                                    <ul class="text-sm text-gray-300 space-y-1">
+                                        <li>• Amortiguadores adaptativos</li>
+                                        <li>• Brazos y rótulas de precisión</li>
+                                        <li>• Resortes deportivos y OEM</li>
+                                        <li>• Sistemas de dirección asistida</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="p-3 bg-accent/10 border border-accent/20 rounded-lg">
+                                    <p class="text-sm text-gray-300">
+                                        <strong class="text-accent">Experiencia:</strong> Especialistas en suspensión neumática para Range Rover y Mercedes de alta gama.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Carrocería y Terminaciones -->
+                    <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-2xl font-semibold text-green-400 mb-6 flex items-center">
+                            <i data-lucide="car" class="w-6 h-6 mr-3"></i>
+                            🚙 Carrocería y Terminaciones
+                        </h3>
+                        
+                        <div class="grid lg:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-4">Piezas de carrocería que marcan la estética y originalidad</h4>
+                                <p class="text-gray-300 leading-relaxed">
+                                    Piezas externas e internas que marcan la estética y originalidad de cada vehículo, desde un Range Rover moderno hasta un Mercedes clásico. Paragolpes, molduras, faros y espejos de calidad OEM.
+                                </p>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div class="p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
+                                    <h5 class="font-semibold text-green-400 mb-2">Productos Destacados</h5>
+                                    <ul class="text-sm text-gray-300 space-y-1">
+                                        <li>• Paragolpes originales y deportivos</li>
+                                        <li>• Molduras y cromados específicos</li>
+                                        <li>• Faros LED y sistemas de iluminación</li>
+                                        <li>• Espejos con tecnología integrada</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="p-3 bg-accent/10 border border-accent/20 rounded-lg">
+                                    <p class="text-sm text-gray-300">
+                                        <strong class="text-accent">Restauraciones:</strong> Repuestos exclusivos para restauraciones de Mercedes Pagoda y clásicos europeos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Motores y Transmisiones -->
+                    <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-2xl font-semibold text-purple-400 mb-6 flex items-center">
+                            <i data-lucide="cog" class="w-6 h-6 mr-3"></i>
+                            🛠️ Motores y Transmisiones
+                        </h3>
+                        
+                        <div class="grid lg:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-4">Componentes mecánicos para proyectos de alta gama y restauración</h4>
+                                <p class="text-gray-300 leading-relaxed">
+                                    Proveemos desde componentes menores hasta grandes conjuntos mecánicos, con especial foco en vehículos de alta gama y proyectos de restauración. Bloques, cajas de cambio y accesorios específicos.
+                                </p>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div class="p-4 bg-purple-500/10 border border-purple-500/20 rounded-lg">
+                                    <h5 class="font-semibold text-purple-400 mb-2">Especialidades Mecánicas</h5>
+                                    <ul class="text-sm text-gray-300 space-y-1">
+                                        <li>• Bloques de motor reconstruidos</li>
+                                        <li>• Cajas de cambio automáticas/manuales</li>
+                                        <li>• Juntas y empaquetaduras premium</li>
+                                        <li>• Accesorios de performance</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="p-3 bg-accent/10 border border-accent/20 rounded-lg">
+                                    <p class="text-sm text-gray-300">
+                                        <strong class="text-accent">Alta gama:</strong> Componentes de alto valor para Ferrari, Maserati y proyectos de restauración complejos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Eléctrico y Multimedia -->
+                    <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="text-2xl font-semibold text-yellow-400 mb-6 flex items-center">
+                            <i data-lucide="zap" class="w-6 h-6 mr-3"></i>
+                            🔌 Eléctrico y Multimedia
+                        </h3>
+                        
+                        <div class="grid lg:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-4">Soluciones electrónicas y multimedia de vanguardia</h4>
+                                <p class="text-gray-300 leading-relaxed">
+                                    Soluciones electrónicas y multimedia para actualizar o mantener tu vehículo al más alto nivel tecnológico. Desde baterías especializadas hasta sistemas CarPlay de última generación.
+                                </p>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div class="p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
+                                    <h5 class="font-semibold text-yellow-400 mb-2">Tecnología Avanzada</h5>
+                                    <ul class="text-sm text-gray-300 space-y-1">
+                                        <li>• Baterías de alta capacidad</li>
+                                        <li>• Alternadores y sistemas de carga</li>
+                                        <li>• Pantallas táctiles y navegación OEM</li>
+                                        <li>• Sistemas CarPlay/Android Auto</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="p-3 bg-accent/10 border border-accent/20 rounded-lg">
+                                    <p class="text-sm text-gray-300">
+                                        <strong class="text-accent">Modernización:</strong> Actualizaciones tecnológicas para vehículos clásicos y premium.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Accesorios y Detalles Premium -->
+                    <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="500">
+                        <h3 class="text-2xl font-semibold text-pink-400 mb-6 flex items-center">
+                            <i data-lucide="crown" class="w-6 h-6 mr-3"></i>
+                            🏁 Accesorios y Detalles Premium
+                        </h3>
+                        
+                        <div class="grid lg:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-4">Accesorios exclusivos que marcan la diferencia</h4>
+                                <p class="text-gray-300 leading-relaxed">
+                                    Accesorios exclusivos que marcan la diferencia en un vehículo premium o clásico. Alerones, emblemas, acabados interiores y kits deportivos de las mejores marcas internacionales.
+                                </p>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div class="p-4 bg-pink-500/10 border border-pink-500/20 rounded-lg">
+                                    <h5 class="font-semibold text-pink-400 mb-2">Detalles Exclusivos</h5>
+                                    <ul class="text-sm text-gray-300 space-y-1">
+                                        <li>• Alerones y kits aerodinámicos</li>
+                                        <li>• Emblemas y badges especiales</li>
+                                        <li>• Acabados interiores en cuero/carbono</li>
+                                        <li>• Kits deportivos certificados</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="p-3 bg-accent/10 border border-accent/20 rounded-lg">
+                                    <p class="text-sm text-gray-300">
+                                        <strong class="text-accent">Personalización:</strong> Accesorios únicos para proyectos de personalización y restauración de alta gama.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Vehículos Clásicos -->
+                    <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="600">
+                        <h3 class="text-2xl font-semibold text-accent mb-6 flex items-center">
+                            <i data-lucide="star" class="w-6 h-6 mr-3"></i>
+                            🏆 Vehículos Clásicos (Sección Especial)
+                        </h3>
+                        
+                        <div class="text-center mb-6">
+                            <div class="p-6 bg-accent/20 border-2 border-accent rounded-lg">
+                                <p class="text-xl text-gray-200 font-semibold">
+                                    "Nos especializamos en repuestos difíciles de conseguir para autos históricos, restauraciones y coleccionables."
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="p-6 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                                <h4 class="font-semibold text-blue-400 mb-3">Restauraciones Auténticas</h4>
+                                <p class="text-gray-300 text-sm">Componentes descatalogados con certificación de autenticidad para restauraciones que respetan la originalidad histórica.</p>
+                            </div>
+                            
+                            <div class="p-6 bg-green-500/10 border border-green-500/20 rounded-lg">
+                                <h4 class="font-semibold text-green-400 mb-3">Red Especializada</h4>
+                                <p class="text-gray-300 text-sm">Acceso a mercados especializados en vehículos clásicos en Europa y Estados Unidos.</p>
+                            </div>
+                            
+                            <div class="p-6 bg-purple-500/10 border border-purple-500/20 rounded-lg">
+                                <h4 class="font-semibold text-purple-400 mb-3">Asesoramiento Experto</h4>
+                                <p class="text-gray-300 text-sm">Consultores especializados en identificación y compatibilidad de piezas históricas.</p>
+                            </div>
+                            
+                            <div class="p-6 bg-accent/10 border border-accent/20 rounded-lg">
+                                <h4 class="font-semibold text-accent mb-3">Casos Documentados</h4>
+                                <p class="text-gray-300 text-sm">Portfolio de restauraciones exitosas de Mercedes Pagoda, Porsche 911 clásicos y otros modelos históricos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Por qué organizamos así los repuestos -->
+                <div class="glass-card p-8 mt-12" data-aos="fade-up">
+                    <h3 class="text-2xl font-semibold text-accent mb-6 flex items-center">
+                        <i data-lucide="target" class="w-6 h-6 mr-3"></i>
+                        🔹 Por qué organizamos así los repuestos
+                    </h3>
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                        Cubrir todas las áreas del vehículo asegura que nuestros clientes encuentren <strong class="text-white">soluciones integrales</strong> y no tengan que depender de múltiples proveedores. Esta organización nos permite ofrecer asesoramiento especializado en cada categoría, garantizando que cada pieza sea la correcta y llegue con el respaldo necesario.
+                    </p>
+                </div>
+                
+                <!-- Enfoque Premium y Clásicos -->
+                <div class="glass-card p-8 mt-8" data-aos="fade-up">
+                    <h3 class="text-2xl font-semibold text-accent mb-6 flex items-center">
+                        <i data-lucide="award" class="w-6 h-6 mr-3"></i>
+                        🔹 Enfoque Premium y Clásicos
+                    </h3>
+                    <div class="text-center">
+                        <p class="text-xl text-gray-300 leading-relaxed">
+                            Si bien trabajamos con todo tipo de piezas, <strong class="text-white">nuestra especialidad son los repuestos premium y clásicos</strong> que requieren experiencia, red de proveedores global y asesoramiento técnico especializado. Esta especialización nos permite ofrecer soluciones que otros importadores no pueden conseguir.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- CTA Final -->
+                <div class="text-center mt-12" data-aos="fade-up">
+                    <div class="glass-card p-8">
+                        <h3 class="text-2xl font-semibold text-accent mb-6">Consultá por el repuesto que necesitás</h3>
+                        <p class="text-gray-300 mb-6 text-lg">
+                            Sin importar el modelo o año de tu vehículo, tenemos la experiencia y la red de proveedores para conseguir la pieza que necesitás.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button class="btn-accent">
+                                <i data-lucide="search" class="w-5 h-5"></i>
+                                Solicitar Repuesto Específico
+                            </button>
+                            
+                            <button class="btn-accent">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                                Consulta Técnica Especializada
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ -->
+        <section id="faq" class="py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="font-space text-4xl font-bold mb-8" data-aos="fade-up">
+                    ❓ Preguntas Frecuentes – Propuesta Expandida (Ejemplos)
+                    <a href="#faq" class="anchor-link text-lg"><i data-lucide="link" class="w-5 h-5 inline"></i></a>
+                </h2>
+                
+                <div class="space-y-8">
+                    <!-- Identificación y precisión -->
+                    <div class="glass-card p-6" data-aos="fade-up">
+                        <h3 class="text-xl font-semibold text-blue-400 mb-4 flex items-center">
+                            <i data-lucide="search" class="w-5 h-5 mr-2"></i>
+                            Sobre identificación y precisión
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">¿Cómo identificamos la pieza correcta para tu vehículo?</h4>
+                                <p class="text-gray-300 text-sm">Con el número de chasis o la libreta podemos validar el repuesto exacto, evitando errores costosos.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">¿Qué pasa si no tengo el número de chasis?</h4>
+                                <p class="text-gray-300 text-sm">También podemos trabajar con fotos, referencias de fábrica o la información del modelo y año del auto.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">¿Pueden conseguir piezas descatalogadas o de autos clásicos?</h4>
+                                <p class="text-gray-300 text-sm">Sí, es una de nuestras especialidades. Buscamos en redes globales de proveedores hasta encontrar la mejor opción.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Servicio de importación -->
+                    <div class="glass-card p-6" data-aos="fade-up">
+                        <h3 class="text-xl font-semibold text-green-400 mb-4 flex items-center">
+                            <i data-lucide="car" class="w-5 h-5 mr-2"></i>
+                            Sobre el servicio de importación
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">¿En cuánto tiempo llega un repuesto importado?</h4>
+                                <p class="text-gray-300 text-sm">Depende del origen y tipo de envío, pero en promedio entre 1 y 4 semanas.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">¿Puedo pedir cualquier tipo de repuesto?</h4>
+                                <p class="text-gray-300 text-sm">Sí, desde piezas mecánicas hasta accesorios premium o detalles de carrocería.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">¿Trabajan con repuestos alternativos o solo originales?</h4>
+                                <p class="text-gray-300 text-sm">Ofrecemos ambas opciones: originales OEM y alternativas de alta calidad, según la preferencia del cliente.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">¿Traen repuestos usados?</h4>
+                                <p class="text-gray-300 text-sm">No es lo habitual, pero en el caso de autos clásicos podemos evaluar piezas recondicionadas cuando no hay stock nuevo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Costos y formas de pago -->
+                    <div class="glass-card p-6" data-aos="fade-up">
+                        <h3 class="text-xl font-semibold text-accent mb-4 flex items-center">
+                            <i data-lucide="dollar-sign" class="w-5 h-5 mr-2"></i>
+                            Sobre costos y formas de pago
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">¿Cómo se calcula el precio final de un repuesto?</h4>
+                                <p class="text-gray-300 text-sm">Incluye el valor de la pieza, costos de importación y la gestión logística. Siempre se informa el monto total antes de confirmar el pedido.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">¿Puedo pagar en cuotas?</h4>
+                                <p class="text-gray-300 text-sm">Sí, contamos con opciones flexibles según el monto y tipo de pieza.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">¿Debo pagar todo por adelantado?</h4>
+                                <p class="text-gray-300 text-sm">Generalmente se solicita un adelanto para confirmar la compra, y el saldo al momento de la entrega.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Entrega y garantías -->
+                    <div class="glass-card p-6" data-aos="fade-up">
+                        <h3 class="text-xl font-semibold text-purple-400 mb-4 flex items-center">
+                            <i data-lucide="package" class="w-5 h-5 mr-2"></i>
+                            Sobre la entrega y garantías
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">¿Dónde entregan los repuestos?</h4>
+                                <p class="text-gray-300 text-sm">En todo Uruguay. Ofrecemos entrega directa en talleres, concesionarias o al cliente final.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">¿Los repuestos tienen garantía?</h4>
+                                <p class="text-gray-300 text-sm">Sí, todos los repuestos cuentan con garantía según el fabricante o proveedor.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">¿Qué pasa si el repuesto llega dañado o no corresponde?</h4>
+                                <p class="text-gray-300 text-sm">Nos ocupamos de gestionar el cambio o reposición sin costo adicional para el cliente.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Confianza y diferenciadores -->
+                    <div class="glass-card p-6" data-aos="fade-up">
+                        <h3 class="text-xl font-semibold text-red-400 mb-4 flex items-center">
+                            <i data-lucide="trophy" class="w-5 h-5 mr-2"></i>
+                            Sobre confianza y diferenciadores
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">¿Por qué elegirnos a nosotros en lugar de traer repuestos por franquicia personal?</h4>
+                                <p class="text-gray-300 text-sm">Porque ofrecemos respaldo legal, factura, garantía y soporte técnico. Con nosotros, la pieza siempre es la correcta.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">¿Qué diferencia a Signature Imports de otros importadores?</h4>
+                                <p class="text-gray-300 text-sm">Nuestra experiencia en autos premium y clásicos, nuestra red internacional de proveedores y un servicio personalizado de punta a punta.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">¿Trabajan solo con autos premium?</h4>
+                                <p class="text-gray-300 text-sm">No exclusivamente, aunque nuestra especialidad son las marcas premium y clásicas de difícil acceso en el mercado local.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Casos especiales -->
+                    <div class="glass-card p-6" data-aos="fade-up">
+                        <h3 class="text-xl font-semibold text-orange-400 mb-4 flex items-center">
+                            <i data-lucide="wrench" class="w-5 h-5 mr-2"></i>
+                            Casos especiales
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">¿Pueden ayudar en proyectos de restauración?</h4>
+                                <p class="text-gray-300 text-sm">Sí, acompañamos proyectos completos de restauración y modificación, gestionando cada pieza necesaria.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">¿Qué tipo de autos han logrado abastecer?</h4>
+                                <p class="text-gray-300 text-sm">Desde Mercedes Pagoda y Porsche 911 hasta Range Rover clásicos y Maserati.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">¿Qué pasa si necesito una pieza con urgencia?</h4>
+                                <p class="text-gray-300 text-sm">Podemos optar por envíos express en tiempos reducidos, con un costo adicional.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contacto -->
+        <section id="contacto" class="py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="font-space text-4xl font-bold mb-8" data-aos="fade-up">
+                    📞 Contacto
+                    <a href="#contacto" class="anchor-link text-lg"><i data-lucide="link" class="w-5 h-5 inline"></i></a>
+                </h2>
+                
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="glass-card p-8" data-aos="fade-up">
+                        <h3 class="text-2xl font-semibold text-accent mb-6">Información de Contacto</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <i data-lucide="phone" class="w-8 h-8 text-blue-400"></i>
+                                <div>
+                                    <h4 class="font-semibold text-white">Teléfono Directo</h4>
+                                    <p class="text-gray-300">+598 99 123 456</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <i data-lucide="message-circle" class="w-8 h-8 text-green-400"></i>
+                                <div>
+                                    <h4 class="font-semibold text-white">WhatsApp</h4>
+                                    <p class="text-gray-300">Consultas instantáneas</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <i data-lucide="mail" class="w-8 h-8 text-purple-400"></i>
+                                <div>
+                                    <h4 class="font-semibold text-white">Email</h4>
+                                    <p class="text-gray-300">info@signatureimports.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 p-6 bg-accent/10 border border-accent/20 rounded-lg">
+                            <h4 class="font-semibold text-accent mb-3">💡 Tip para consultas:</h4>
+                            <p class="text-gray-300 text-sm">
+                                "Cuanto más detalles nos des (vehículo, año, chasis), más rápido conseguimos tu pieza."
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-2xl font-semibold text-accent mb-6">Solicitar Consulta</h3>
+                        
+                        <div class="space-y-4">
+                            <button class="btn-accent w-full">
+                                <i data-lucide="search" class="w-5 h-5"></i>
+                                Solicitar repuesto específico
+                            </button>
+                            
+                            <button class="btn-accent w-full">
+                                <i data-lucide="trophy" class="w-5 h-5"></i>
+                                Ver más casos de éxito
+                            </button>
+                            
+                            <button class="btn-accent w-full">
+                                <i data-lucide="wrench" class="w-5 h-5"></i>
+                                Asesoramiento técnico
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Marketing Transversal -->
+        <section id="marketing" class="py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="font-space text-4xl font-bold mb-8" data-aos="fade-up">
+                    📈 Marketing y Visibilidad
+                    <a href="#marketing" class="anchor-link text-lg"><i data-lucide="link" class="w-5 h-5 inline"></i></a>
+                </h2>
+                
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="glass-card p-8" data-aos="fade-up">
+                        <h3 class="text-xl font-semibold text-accent mb-4 flex items-center">
+                            <i data-lucide="shield-check" class="w-6 h-6 mr-3"></i>
+                            Confianza
+                        </h3>
+                        <p class="text-gray-300 mb-4">Logos de marcas y talleres con los que trabajamos establecen credibilidad.</p>
+                        <ul class="text-sm text-gray-400 space-y-1">
+                            <li>• Mercedes-Benz, Ferrari, Porsche</li>
+                            <li>• Range Rover, Maserati</li>
+                            <li>• Talleres especializados</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-semibold text-accent mb-4 flex items-center">
+                            <i data-lucide="award" class="w-6 h-6 mr-3"></i>
+                            Autoridad
+                        </h3>
+                        <p class="text-gray-300 mb-4">Años de experiencia y testimonios respaldan nuestro expertise.</p>
+                        <ul class="text-sm text-gray-400 space-y-1">
+                            <li>• +10 años de experiencia</li>
+                            <li>• 500+ clientes satisfechos</li>
+                            <li>• Red global en 20+ países</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-semibold text-accent mb-4 flex items-center">
+                            <i data-lucide="brain" class="w-6 h-6 mr-3"></i>
+                            Visibilidad AI
+                        </h3>
+                        <p class="text-gray-300 mb-4">Estructura optimizada para indexación en ChatGPT, Claude, Perplexity.</p>
+                        <ul class="text-sm text-gray-400 space-y-1">
+                            <li>• Texto estructurado en listas</li>
+                            <li>• FAQs con preguntas naturales</li>
+                            <li>• Keywords estratégicas</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <div class="glass-card p-8">
+                        <h3 class="text-2xl font-semibold text-accent mb-4">Escalabilidad del Contenido</h3>
+                        <p class="text-gray-300 mb-6">
+                            Cada caso de éxito y categoría se convierte en contenido optimizado para búsquedas específicas como "cómo conseguir X pieza en Uruguay".
+                        </p>
+                        
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                                <p class="text-sm text-gray-300">"Repuestos Mercedes Uruguay"</p>
+                            </div>
+                            <div class="p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
+                                <p class="text-sm text-gray-300">"Importar piezas auto clásico"</p>
+                            </div>
+                            <div class="p-4 bg-purple-500/10 border border-purple-500/20 rounded-lg">
+                                <p class="text-sm text-gray-300">"Restauración Porsche Uruguay"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- Footer -->
+    <footer class="main-content py-4 px-6 border-t border-gray-800 bg-black bg-opacity-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col sm:flex-row items-center justify-between text-sm text-gray-400">
+                <p>Propuesta realizada por <span class="text-white font-medium">Diego Castaño</span></p>
+                <div class="flex items-center gap-4 mt-2 sm:mt-0">
+                    <a href="mailto:diegothx@me.com" class="hover:text-accent transition-colors">
+                        diegothx@me.com
+                    </a>
+                    <span class="text-gray-600">•</span>
+                    <a href="https://wa.me/598092042015" target="_blank" class="hover:text-accent transition-colors">
+                        092 042 015
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </div>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 100
+        });
+        
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // GSAP animations
+        gsap.timeline()
+            .from("#heroLogo", { duration: 1, scale: 0, rotation: 360, ease: "back.out(1.7)" })
+            .from("#heroTitle", { duration: 1, y: 50, opacity: 0, ease: "power3.out" }, "-=0.5")
+            .from("#heroSubtitle", { duration: 1, y: 30, opacity: 0, ease: "power3.out" }, "-=0.7");
+        
+        // Scrollspy functionality
+        const sections = document.querySelectorAll('section[id]');
+        const sidebarItems = document.querySelectorAll('.sidebar-item');
+        
+        let currentActiveSection = '';
+        let isScrolling = false;
+        
+        function updateActiveSection() {
+            if (isScrolling) return;
+            
+            const scrollPosition = window.scrollY + 200;
+            let currentSection = '';
+            
+            // Check if we're near the bottom of the page first
+            const documentHeight = document.documentElement.scrollHeight;
+            const windowHeight = window.innerHeight;
+            const scrollY = window.scrollY;
+            
+            if (scrollY + windowHeight >= documentHeight - 150) {
+                // If we're at the bottom, always use the last section
+                currentSection = sections[sections.length - 1].id;
+            } else {
+                // Find the section that contains the current scroll position
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        currentSection = section.id;
+                    }
+                });
+            }
+            
+            // Update active state if section changed
+            if (currentSection && currentActiveSection !== currentSection) {
+                currentActiveSection = currentSection;
+                
+                // Remove active class from all items
+                sidebarItems.forEach(item => item.classList.remove('active'));
+                
+                // Add active class to current item
+                const activeItem = document.querySelector(`[data-section="${currentSection}"]`);
+                if (activeItem) {
+                    activeItem.classList.add('active');
+                }
+            }
+        }
+        
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(updateActiveSection, 10);
+        });
+        
+        updateActiveSection();
+        
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        const sidebar = document.getElementById('sidebar');
+        
+        function toggleMobileMenu() {
+            sidebar.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+        }
+        
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        mobileOverlay.addEventListener('click', toggleMobileMenu);
+        
+        sidebarItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth < 1024) {
+                    toggleMobileMenu();
+                }
+                
+                isScrolling = true;
+                setTimeout(() => {
+                    isScrolling = false;
+                    updateActiveSection();
+                }, 100);
+            });
+        });
+        
+        // Back to top functionality
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
